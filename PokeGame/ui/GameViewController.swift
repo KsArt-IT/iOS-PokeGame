@@ -17,10 +17,16 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var newGame: UIButton!
     
-    private lazy var game = Game(countItems: buttons.count, time: 30) { [weak self] (status, time) in
+    private lazy var game = Game(countItems: buttons.count) { [weak self] (status, time) in
         guard let self = self else { return }
         self.timerGame.text = time.secondsToString()
+        self.timerGame.isHidden = !Settings.shared.currentSettings.timerState
         self.updateInfoGame(with: status)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        game.stopGame()
     }
     
     override func viewDidLoad() {

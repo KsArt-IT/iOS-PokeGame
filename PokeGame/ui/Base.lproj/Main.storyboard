@@ -385,36 +385,171 @@
             </objects>
             <point key="canvasLocation" x="1204" y="-67"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Таймер-->
+        <scene sceneID="zyd-hq-wAk">
+            <objects>
+                <viewController id="HtH-sQ-TDi" customClass="SelectTimeViewController" customModule="PokeGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IkJ-Du-4RF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Veu-dY-QFD">
+                                <rect key="frame" x="0.0" y="94" width="375" height="684"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeCell" textLabel="ibg-OS-TvD" imageView="UJF-ku-Tt0" style="IBUITableViewCellStyleDefault" id="RFg-3O-5en">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RFg-3O-5en" id="hd0-uj-amH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ibg-OS-TvD">
+                                                    <rect key="frame" x="55" y="0.0" width="304" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="timer" catalog="system" id="UJF-ku-Tt0">
+                                                    <rect key="frame" x="18.166666666666668" y="12.333333333333336" width="19.666666666666664" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8g1-kX-Th3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Veu-dY-QFD" firstAttribute="leading" secondItem="8g1-kX-Th3" secondAttribute="leading" id="F4p-MB-KBT"/>
+                            <constraint firstItem="8g1-kX-Th3" firstAttribute="trailing" secondItem="Veu-dY-QFD" secondAttribute="trailing" id="LQk-c1-3OL"/>
+                            <constraint firstItem="8g1-kX-Th3" firstAttribute="bottom" secondItem="Veu-dY-QFD" secondAttribute="bottom" id="lFj-yF-qGN"/>
+                            <constraint firstItem="Veu-dY-QFD" firstAttribute="top" secondItem="8g1-kX-Th3" secondAttribute="top" id="pgz-wc-tSc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Таймер" id="OiT-7q-Ibx"/>
+                    <connections>
+                        <outlet property="tableView" destination="Veu-dY-QFD" id="Nek-gQ-BMh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lfV-P4-AcH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="-1366"/>
+        </scene>
+        <!--Настройки-->
         <scene sceneID="8DQ-Uz-X7Y">
             <objects>
-                <tableViewController id="wmL-y0-2wY" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="isB-Wh-Bw7">
+                <tableViewController id="wmL-y0-2wY" customClass="SettingsTableViewController" customModule="PokeGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="isB-Wh-Bw7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dpz-NB-ntP">
-                                <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dpz-NB-ntP" id="xwL-0V-cK1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="gug-h8-e60">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="etq-Yq-sd1">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="etq-Yq-sd1" id="kry-MU-mk6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Таймер" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQH-fP-i6N">
+                                                    <rect key="frame" x="16.000000000000004" y="11.333333333333334" width="60.333333333333343" height="21.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCF-By-WsP">
+                                                    <rect key="frame" x="294" y="6.3333333333333321" width="51" height="30.999999999999996"/>
+                                                    <connections>
+                                                        <action selector="changeTimerState:" destination="wmL-y0-2wY" eventType="valueChanged" id="436-hH-5eU"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yCF-By-WsP" firstAttribute="centerY" secondItem="kry-MU-mk6" secondAttribute="centerY" id="8kB-av-jK7"/>
+                                                <constraint firstItem="jQH-fP-i6N" firstAttribute="leading" secondItem="kry-MU-mk6" secondAttribute="leading" constant="16" id="Nlf-0f-roM"/>
+                                                <constraint firstAttribute="trailing" secondItem="yCF-By-WsP" secondAttribute="trailing" constant="32" id="i1K-82-pvQ"/>
+                                                <constraint firstItem="jQH-fP-i6N" firstAttribute="centerY" secondItem="kry-MU-mk6" secondAttribute="centerY" id="qsJ-Mj-x49"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="J8k-ws-wOe">
+                                        <rect key="frame" x="0.0" y="93.666667938232422" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J8k-ws-wOe" id="cCs-l5-Hkh">
+                                            <rect key="frame" x="0.0" y="0.0" width="348.66666666666669" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время игры" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypo-Ly-8r4">
+                                                    <rect key="frame" x="16" y="11.333333333333334" width="96" height="21.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 сек" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyb-kl-HoU">
+                                                    <rect key="frame" x="293.66666666666669" y="14.333333333333336" width="39" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dyb-kl-HoU" firstAttribute="centerY" secondItem="cCs-l5-Hkh" secondAttribute="centerY" id="028-qf-m3J"/>
+                                                <constraint firstAttribute="trailing" secondItem="dyb-kl-HoU" secondAttribute="trailing" constant="16" id="HuM-yU-4GZ"/>
+                                                <constraint firstItem="Ypo-Ly-8r4" firstAttribute="centerY" secondItem="cCs-l5-Hkh" secondAttribute="centerY" id="nPr-YK-iUw"/>
+                                                <constraint firstItem="Ypo-Ly-8r4" firstAttribute="leading" secondItem="cCs-l5-Hkh" secondAttribute="leadingMargin" id="puU-ve-dQa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="HtH-sQ-TDi" kind="show" identifier="selectTimeVC" id="nMi-gQ-CXI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dpz-NB-ntP">
+                                        <rect key="frame" x="0.0" y="137.33333587646484" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dpz-NB-ntP" id="xwL-0V-cK1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXM-uu-6gc">
+                                                    <rect key="frame" x="72.333333333333329" y="4.3333333333333321" width="230.66666666666669" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Настройки по умолчанию"/>
+                                                    <connections>
+                                                        <action selector="resetSettings:" destination="wmL-y0-2wY" eventType="touchUpInside" id="fVW-8C-gcd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wXM-uu-6gc" firstAttribute="centerY" secondItem="xwL-0V-cK1" secondAttribute="centerY" id="X6E-3I-0YQ"/>
+                                                <constraint firstItem="wXM-uu-6gc" firstAttribute="centerX" secondItem="xwL-0V-cK1" secondAttribute="centerX" id="k3B-r5-9LM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="wmL-y0-2wY" id="DcQ-nb-cID"/>
                             <outlet property="delegate" destination="wmL-y0-2wY" id="rjR-if-UHO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Xfx-Ed-BR3"/>
+                    <navigationItem key="navigationItem" title="Настройки" id="Xfx-Ed-BR3"/>
+                    <connections>
+                        <outlet property="switchTimer" destination="yCF-By-WsP" id="Y5c-sz-nQz"/>
+                        <outlet property="timeGame" destination="dyb-kl-HoU" id="1Vr-pn-1VM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUl-aC-2qw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="266" y="-729"/>
         </scene>
-        <!--View Controller-->
+        <!--Рекорд-->
         <scene sceneID="t2K-UJ-quU">
             <objects>
                 <viewController id="1Zi-g4-D1v" sceneMemberID="viewController">
@@ -424,7 +559,7 @@
                         <viewLayoutGuide key="safeArea" id="rOy-k8-y2f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Znt-D7-luf"/>
+                    <navigationItem key="navigationItem" title="Рекорд" id="Znt-D7-luf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Jl-mi-fFP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,6 +585,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="timer" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
