@@ -245,16 +245,27 @@
                                     <action selector="pressButtons:" destination="iZd-dR-aBS" eventType="touchUpInside" id="1CR-Dh-1Kt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uis-Ek-HXC">
+                                <rect key="frame" x="16" y="107.66666666666667" width="343" height="26.333333333333329"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wle-WY-2xA"/>
                         <color key="backgroundColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TXa-7r-BVa" firstAttribute="leading" secondItem="wle-WY-2xA" secondAttribute="leading" constant="16" id="CWY-Kz-3mF"/>
+                            <constraint firstItem="wle-WY-2xA" firstAttribute="trailing" secondItem="Uis-Ek-HXC" secondAttribute="trailing" constant="16" id="QgG-y6-KN0"/>
                             <constraint firstItem="TXa-7r-BVa" firstAttribute="top" secondItem="wle-WY-2xA" secondAttribute="top" constant="16" id="RkE-M5-iYb"/>
+                            <constraint firstItem="Uis-Ek-HXC" firstAttribute="leading" secondItem="wle-WY-2xA" secondAttribute="leading" constant="16" id="txc-0X-zIa"/>
                             <constraint firstItem="wle-WY-2xA" firstAttribute="trailing" secondItem="TXa-7r-BVa" secondAttribute="trailing" constant="16" id="xgF-t2-ZWo"/>
+                            <constraint firstItem="Uis-Ek-HXC" firstAttribute="top" secondItem="TXa-7r-BVa" secondAttribute="bottom" constant="8" id="zs8-yB-9TU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextDigit" destination="Uis-Ek-HXC" id="Jb6-Wn-o2i"/>
+                        <outlet property="statusGame" destination="TXa-7r-BVa" id="Hrb-u0-AOM"/>
                         <outletCollection property="buttons" destination="ohp-KT-mdG" collectionClass="NSMutableArray" id="bwr-lA-Tic"/>
                         <outletCollection property="buttons" destination="kAw-UB-VW1" collectionClass="NSMutableArray" id="uqa-mP-GDZ"/>
                         <outletCollection property="buttons" destination="5xI-LB-cim" collectionClass="NSMutableArray" id="RIH-d8-9DD"/>
