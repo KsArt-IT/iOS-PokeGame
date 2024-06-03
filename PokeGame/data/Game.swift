@@ -10,6 +10,7 @@ import Foundation
 enum StatusGame {
     case start
     case win
+    case lose
 }
 
 final class Game {
@@ -27,10 +28,30 @@ final class Game {
     
     var nextItem: Item?
     
-    var status: StatusGame = .start
+    var status: StatusGame = .start {
+        didSet {
+            if status != .start {
+                stopGame()
+            }
+        }
+    }
     
-    init(countItems: Int) {
+    private var timeForGame: Int {
+        didSet {
+            if timeForGame == 0 {
+                status = .lose
+            }
+            updateTimer(status, timeForGame)
+        }
+    }
+    
+    private var timer: Timer?
+    private var updateTimer:(StatusGame, Int) -> Void
+    
+    init(countItems: Int, time: Int, updateTimer: @escaping (_ status: StatusGame, _ second: Int) -> Void) {
         self.countItems = countItems
+        self.timeForGame = time
+        self.updateTimer = updateTimer
         setupGame()
     }
     
@@ -43,6 +64,12 @@ final class Game {
         }
         
         nextItem = items.shuffled().first
+        
+        updateTimer(status,timeForGame)
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (_) in
+            self?.timeForGame -= 1
+        })
     }
     
     func check(index: Int) {
@@ -56,5 +83,18 @@ final class Game {
         if nextItem == nil {
             status = .win
         }
+    }
+    
+    func stopGame() {
+        timer?.invalidate()
+    }
+}
+
+extension Int {
+    func secondsToString() -> String {
+        let minutes = self / 60
+        let seconds = self % 60
+        
+        return String(format : "%d:%02d", minutes, seconds)
     }
 }

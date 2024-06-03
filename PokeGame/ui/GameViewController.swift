@@ -13,8 +13,13 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var statusGame: UILabel!
     @IBOutlet weak var nextDigit: UILabel!
+    @IBOutlet weak var timerGame: UILabel!
     
-    private lazy var game = Game(countItems: buttons.count)
+    private lazy var game = Game(countItems: buttons.count, time: 30) { [weak self] (status, time) in
+        guard let self = self else { return }
+        self.timerGame.text = time.secondsToString()
+        self.updateInfoGame(with: status)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +48,20 @@ class GameViewController: UIViewController {
         }
         nextDigit.text = game.nextItem?.title
         
-        if game.status == .win {
-            statusGame.text = "Вы выйграли!"
+        updateInfoGame(with: game.status)
+    }
+    
+    private func updateInfoGame(with status: StatusGame) {
+        switch status {
+        case .start:
+            statusGame.text = "Игра началась..."
+            statusGame.textColor = .black
+        case .win:
+            statusGame.text = "Вы выиграли!"
             statusGame.textColor = .green
+        case .lose:
+            statusGame.text = "Вы проиграли!"
+            statusGame.textColor = .red
         }
     }
 }
