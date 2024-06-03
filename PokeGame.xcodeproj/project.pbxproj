@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		F193DD982C09D53600A95A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F193DD972C09D53600A95A0E /* AppDelegate.swift */; };
 		F193DD9A2C09D53600A95A0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F193DD992C09D53600A95A0E /* SceneDelegate.swift */; };
-		F193DD9C2C09D53600A95A0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F193DD9B2C09D53600A95A0E /* ViewController.swift */; };
 		F193DD9F2C09D53600A95A0E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F193DD9E2C09D53600A95A0E /* Base */; };
 		F193DDA12C09D53800A95A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F193DDA02C09D53800A95A0E /* Assets.xcassets */; };
 		F193DDA42C09D53800A95A0E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F193DDA32C09D53800A95A0E /* Base */; };
+		F193DDAE2C09F90E00A95A0E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F193DDAD2C09F90E00A95A0E /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F193DD942C09D53600A95A0E /* PokeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F193DD972C09D53600A95A0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F193DD992C09D53600A95A0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F193DD9B2C09D53600A95A0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F193DD9E2C09D53600A95A0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F193DDA02C09D53800A95A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F193DDA32C09D53800A95A0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F193DDA52C09D53800A95A0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F193DDAD2C09F90E00A95A0E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,31 @@
 		F193DD962C09D53600A95A0E /* PokeGame */ = {
 			isa = PBXGroup;
 			children = (
+				F193DDAC2C09F29600A95A0E /* data */,
+				F193DDAB2C09F28E00A95A0E /* ui */,
 				F193DD972C09D53600A95A0E /* AppDelegate.swift */,
 				F193DD992C09D53600A95A0E /* SceneDelegate.swift */,
-				F193DD9B2C09D53600A95A0E /* ViewController.swift */,
-				F193DD9D2C09D53600A95A0E /* Main.storyboard */,
 				F193DDA02C09D53800A95A0E /* Assets.xcassets */,
-				F193DDA22C09D53800A95A0E /* LaunchScreen.storyboard */,
 				F193DDA52C09D53800A95A0E /* Info.plist */,
 			);
 			path = PokeGame;
+			sourceTree = "<group>";
+		};
+		F193DDAB2C09F28E00A95A0E /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				F193DD9D2C09D53600A95A0E /* Main.storyboard */,
+				F193DDA22C09D53800A95A0E /* LaunchScreen.storyboard */,
+				F193DDAD2C09F90E00A95A0E /* GameViewController.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		F193DDAC2C09F29600A95A0E /* data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F193DD9C2C09D53600A95A0E /* ViewController.swift in Sources */,
 				F193DD982C09D53600A95A0E /* AppDelegate.swift in Sources */,
+				F193DDAE2C09F90E00A95A0E /* GameViewController.swift in Sources */,
 				F193DD9A2C09D53600A95A0E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
