@@ -45,6 +45,15 @@ class GameViewController: UIViewController {
     private func updateUI() {
         for index in game.items.indices {
             buttons[index].isHidden = game.items[index].isFound
+            
+            if game.items[index].isError {
+                UIView.animate(withDuration: 0.3) { [weak self] in
+                    self?.buttons[index].backgroundColor = .red
+                } completion: { [weak self] (_) in
+                    self?.buttons[index].backgroundColor = .white
+                    self?.game.items[index].isError = false
+                }
+            }
         }
         nextDigit.text = game.nextItem?.title
         
