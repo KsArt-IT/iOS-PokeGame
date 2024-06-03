@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var nextDigit: UILabel!
     @IBOutlet weak var timerGame: UILabel!
     
+    @IBOutlet weak var newGame: UIButton!
+    
     private lazy var game = Game(countItems: buttons.count, time: 30) { [weak self] (status, time) in
         guard let self = self else { return }
         self.timerGame.text = time.secondsToString()
@@ -23,6 +25,12 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupScreen()
+    }
+    
+    @IBAction func newGame(_ sender: UIButton) {
+        game.newGame()
+        sender.isHidden = true
         setupScreen()
     }
     
@@ -65,12 +73,15 @@ class GameViewController: UIViewController {
         case .start:
             statusGame.text = "Игра началась..."
             statusGame.textColor = .black
+            newGame.isHidden = true
         case .win:
             statusGame.text = "Вы выиграли!"
             statusGame.textColor = .green
+            newGame.isHidden = false
         case .lose:
             statusGame.text = "Вы проиграли!"
             statusGame.textColor = .red
+            newGame.isHidden = false
         }
     }
 }
