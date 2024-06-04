@@ -46,7 +46,7 @@
                                             <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="1Zi-g4-D1v" kind="show" id="ppD-qR-GkT"/>
+                                            <segue destination="1Zi-g4-D1v" kind="presentation" id="ppD-qR-GkT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -379,11 +379,12 @@
                         <outletCollection property="buttons" destination="Nsy-oQ-BsD" collectionClass="NSMutableArray" id="WUR-Sh-CUl"/>
                         <outletCollection property="buttons" destination="Ume-UM-JrB" collectionClass="NSMutableArray" id="Gde-Ue-Vat"/>
                         <outletCollection property="buttons" destination="Qdx-6x-Jkg" collectionClass="NSMutableArray" id="tKT-qf-AAA"/>
+                        <segue destination="1Zi-g4-D1v" kind="presentation" identifier="recordVC" id="cEU-U9-RZg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O68-RR-o23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="-67"/>
+            <point key="canvasLocation" x="1204" y="-2"/>
         </scene>
         <!--Таймер-->
         <scene sceneID="zyd-hq-wAk">
@@ -552,14 +553,39 @@
         <!--Рекорд-->
         <scene sceneID="t2K-UJ-quU">
             <objects>
-                <viewController id="1Zi-g4-D1v" sceneMemberID="viewController">
+                <viewController id="1Zi-g4-D1v" customClass="RecordViewController" customModule="PokeGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zul-Ko-FCk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rrr-DS-mGG">
+                                <rect key="frame" x="161.66666666666666" y="388" width="52" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZd-35-7Qm">
+                                <rect key="frame" x="8" y="8" width="90.666666666666671" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Закрыть"/>
+                                <connections>
+                                    <action selector="closeVC:" destination="1Zi-g4-D1v" eventType="touchUpInside" id="IL1-qP-I27"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rOy-k8-y2f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rrr-DS-mGG" firstAttribute="centerY" secondItem="Zul-Ko-FCk" secondAttribute="centerY" id="8nb-qd-RyG"/>
+                            <constraint firstItem="Rrr-DS-mGG" firstAttribute="centerX" secondItem="Zul-Ko-FCk" secondAttribute="centerX" id="XIb-gO-T0k"/>
+                            <constraint firstItem="JZd-35-7Qm" firstAttribute="leading" secondItem="rOy-k8-y2f" secondAttribute="leading" constant="8" id="Zbj-lI-Rao"/>
+                            <constraint firstItem="JZd-35-7Qm" firstAttribute="top" secondItem="rOy-k8-y2f" secondAttribute="top" constant="8" id="md4-QV-RhV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Рекорд" id="Znt-D7-luf"/>
+                    <connections>
+                        <outlet property="recordLabel" destination="Rrr-DS-mGG" id="ked-Dg-YTO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Jl-mi-fFP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -584,6 +610,9 @@
             <point key="canvasLocation" x="-676" y="-66.502463054187189"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cEU-U9-RZg"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="timer" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">

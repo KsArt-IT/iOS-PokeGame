@@ -77,18 +77,61 @@ class GameViewController: UIViewController {
     
     private func updateInfoGame(with status: StatusGame) {
         switch status {
-        case .start:
-            statusGame.text = "Игра началась..."
-            statusGame.textColor = .black
-            newGame.isHidden = true
-        case .win:
-            statusGame.text = "Вы выиграли!"
-            statusGame.textColor = .green
-            newGame.isHidden = false
-        case .lose:
-            statusGame.text = "Вы проиграли!"
-            statusGame.textColor = .red
-            newGame.isHidden = false
+            case .start:
+                statusGame.text = "Игра началась..."
+                statusGame.textColor = .black
+                newGame.isHidden = true
+            case .win:
+                statusGame.text = "Вы выиграли!"
+                statusGame.textColor = .green
+                newGame.isHidden = false
+                if game.isNewRecord {
+                    showNewRecordAlert()
+                } else {
+                    showNextActionAlertSheet()
+                }
+            case .lose:
+                statusGame.text = "Вы проиграли!"
+                statusGame.textColor = .red
+                newGame.isHidden = false
+                showNextActionAlertSheet()
         }
+    }
+    
+    private func showNewRecordAlert() {
+        let alert = UIAlertController(title: "Поздравляем!", message: "Вы установили новый рекорд!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    private func showNextActionAlertSheet() {
+        let alert = UIAlertController(title: "Что вы хотите сделать далее?", message: nil, preferredStyle: .actionSheet)
+        let newGameAction = UIAlertAction(title: "Начать новую игру", style: .default) { [weak self] (_) in
+            self?.game.newGame()
+            self?.setupScreen()
+        }
+        let showRecord = UIAlertAction(title: "Посмотреть рекорд", style: .default) { [weak self] (_) in
+            self?.performSegue(withIdentifier: "recordVC", sender: nil)
+        }
+        let menuAction = UIAlertAction(title: "Перейти в меню", style: .destructive) { [weak self] (_) in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+        
+        alert.addAction(newGameAction)
+        alert.addAction(showRecord)
+        alert.addAction(menuAction)
+        alert.addAction(cancelAction)
+        
+        // для iPad необходимо указать popover, иначе будет ошибка
+        if let popover = alert.popoverPresentationController {
+            popover.sourceView = self.view
+            popover.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            // убрать стрелку popover
+            popover.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
+        }
+        
+        present(alert, animated: true)
     }
 }

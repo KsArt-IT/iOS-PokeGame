@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F130BAFF2C0F1B5D000DEF59 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130BAFE2C0F1B5D000DEF59 /* RecordViewController.swift */; };
 		F193DD982C09D53600A95A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F193DD972C09D53600A95A0E /* AppDelegate.swift */; };
 		F193DD9A2C09D53600A95A0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F193DD992C09D53600A95A0E /* SceneDelegate.swift */; };
 		F193DD9F2C09D53600A95A0E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F193DD9E2C09D53600A95A0E /* Base */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F130BAFE2C0F1B5D000DEF59 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		F193DD942C09D53600A95A0E /* PokeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F193DD972C09D53600A95A0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F193DD992C09D53600A95A0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				F193DDAD2C09F90E00A95A0E /* GameViewController.swift */,
 				F1E4EBCF2C0E1A50007FBB66 /* SelectTimeViewController.swift */,
 				F1E4EBD12C0E1AE0007FBB66 /* SettingsTableViewController.swift */,
+				F130BAFE2C0F1B5D000DEF59 /* RecordViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				F193DD982C09D53600A95A0E /* AppDelegate.swift in Sources */,
 				F1E4EBD02C0E1A50007FBB66 /* SelectTimeViewController.swift in Sources */,
 				F1E4EBD22C0E1AE0007FBB66 /* SettingsTableViewController.swift in Sources */,
+				F130BAFF2C0F1B5D000DEF59 /* RecordViewController.swift in Sources */,
 				F193DDAE2C09F90E00A95A0E /* GameViewController.swift in Sources */,
 				F1E4EBD42C0E2207007FBB66 /* Settings.swift in Sources */,
 				F193DD9A2C09D53600A95A0E /* SceneDelegate.swift in Sources */,
